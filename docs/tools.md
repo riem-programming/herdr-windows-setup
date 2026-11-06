@@ -76,3 +76,34 @@ python -I scripts/check-yazi-theme.py theme-schema.json "$env:APPDATA\yazi\confi
 ```
 
 It reports every section or key that the schema does not know. The final check is still opening yazi: a bad file prints "Failed to parse config".
+
+## delta
+
+Syntax-highlighted diffs with line numbers. Used as the first diff renderer in lazygit (`config/lazygit/config.yml`, `git.diffRenderers`; press `|` in lazygit to cycle renderers). `--syntax-theme ansi` keeps it on the terminal's 16 colors.
+
+To use it for plain `git diff` / `git show` too, merge `config/git/delta.gitconfig` into `~/.gitconfig`:
+
+```powershell
+git config --global core.pager delta
+git config --global interactive.diffFilter "delta --color-only"
+git config --global delta.navigate true
+git config --global delta.line-numbers true
+git config --global delta.syntax-theme ansi
+git config --global merge.conflictstyle zdiff3
+```
+
+## zoxide
+
+Remembers the directories you visit and jumps by name: `z herdr`, `z api`, `zi` (interactive). Needs one line in the PowerShell profile (`config/powershell/profile-snippet.ps1`). yazi's built-in `z` key uses the zoxide database once zoxide is installed.
+
+## bat
+
+`cat` with syntax highlighting, line numbers and git change markers. Config in `config/bat/config` (`--theme="ansi"` follows the terminal scheme). Try `bat README.md`, `bat -A file` (show whitespace), `bat --diff file`.
+
+## eza
+
+`ls` replacement: `eza -l --git --icons` (git status per file), `eza --tree --level 2`, `eza -la --sort modified`. Icons use the Nerd Font. No config.
+
+## sd
+
+Find and replace without sed syntax: `sd 'old' 'new' file`, `sd -p 'old' 'new' file` (preview only), capture groups with `$1`. No config.

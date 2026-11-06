@@ -1,0 +1,5 @@
+# bat configuration
+# Reference: https://github.com/sharkdp/bat#configuration-file
+# "ansi" uses the terminal's 16 colors (Minimal Ink scheme) instead of a fixed palette.
+--theme="ansi"
+--style="numbers,changes,header"
