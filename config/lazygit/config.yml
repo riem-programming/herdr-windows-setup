@@ -7,8 +7,9 @@ git:
   diffRenderers:
     # delta: syntax-highlighted diffs with line numbers. "ansi" uses the terminal's
     # 16 colors, so it follows the Minimal Ink scheme like lazygit itself.
+    # lazygit 0.65 does not support the {{colorScheme}} template yet, so --dark is explicit.
     - name: delta
-      command: delta --{{colorScheme}} --paging=never --line-numbers --syntax-theme ansi
+      command: delta --dark --paging=never --line-numbers --syntax-theme ansi
     # git's own diff, kept as a fallback.
     - type: rawGit
       name: default
