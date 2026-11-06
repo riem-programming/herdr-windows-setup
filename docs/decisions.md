@@ -2,6 +2,18 @@
 
 ADR-style: one section per decision.
 
+## 0. Guiding principle: stable and verified on Windows first
+
+- **Rule:** Only use tools and features that are documented as supported on native Windows and that we have verified ourselves. Do not add anything that is marked preview, experimental, best-effort, or that assumes Unix tooling (`sh`, `bash`, `$EDITOR`, Unix paths), even if it works today.
+- **Context:** Windows is not the primary platform for most terminal tooling. Plugins, layouts and mods from the herdr gallery are "preview / best-effort" on Windows and many shell out to `sh`/`bash`. The previous setup broke repeatedly for exactly this reason.
+- **How to apply:**
+  - Before adding a tool or setting, check the herdr Windows support page and the tool's own Windows notes.
+  - Prefer single-binary tools with native Windows builds (lazygit, glow, yazi) over plugins.
+  - Prefer herdr's built-in features (themes, keybindings, custom commands) over gallery plugins.
+  - One `experimental` setting is allowed only when its failure mode is harmless: `pane_history` (worst case, a pane restores empty).
+  - Validate every config change (`herdr server reload-config` with no diagnostics, tool launches cleanly) before committing it here.
+- **Consequences:** Fewer features, zero surprises. If something is not stable on Windows, the answer is "not yet", not "let's patch around it".
+
 ## 1. Rebuild from scratch
 
 - **Context:** The previous setup was herdr 0.9.3 + WezTerm + WezTerm SendKey bindings that translated `Ctrl+T` etc. into herdr `ctrl+alt` chords + Git Bash launcher scripts. It grew by trial and error (7 config backups) and had two sources of truth for keybindings.
