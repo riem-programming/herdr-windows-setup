@@ -1,13 +1,12 @@
 # Minimalism palette (dark): one ink, one paper, hierarchy by contrast only.
 # text #e6e6e6 | muted #7a7a7a | accent #d4d4d4 | active #1e1e1e | selection #2a2a2a
 # green #8fbf8f | blue #8fb0d9 | red #d98c8c | yellow #d9c48c
+# Keys follow the shipped preset for this version (yazi-config/preset/theme-dark.toml).
 
 [mgr]
 cwd = { fg = "#d4d4d4", bold = true }
-hovered = { fg = "#e6e6e6", bg = "#2a2a2a", bold = true }
-preview_hovered = { bg = "#1e1e1e" }
 find_keyword = { fg = "#d9c48c", bold = true, underline = true }
-find_position = { fg = "#7a7a7a" }
+find_position = { fg = "#7a7a7a", bg = "reset" }
 symlink_target = { fg = "#7a7a7a", italic = true }
 marker_copied = { fg = "#8fbf8f", bg = "#8fbf8f" }
 marker_cut = { fg = "#d98c8c", bg = "#d98c8c" }
@@ -17,6 +16,11 @@ count_copied = { fg = "#121212", bg = "#8fbf8f" }
 count_cut = { fg = "#121212", bg = "#d98c8c" }
 count_selected = { fg = "#121212", bg = "#d9c48c" }
 border_style = { fg = "#2a2a2a" }
+
+[indicator]
+parent = { fg = "#e6e6e6", bg = "#1e1e1e" }
+current = { fg = "#e6e6e6", bg = "#2a2a2a", bold = true }
+preview = { fg = "#e6e6e6", bg = "#1e1e1e" }
 
 [tabs]
 active = { fg = "#121212", bg = "#d4d4d4", bold = true }
@@ -32,8 +36,6 @@ unset_alt = { fg = "#d98c8c", bg = "#222222" }
 
 [status]
 overall = { fg = "#e6e6e6", bg = "#121212" }
-sep_left = { open = "", close = "" }
-sep_right = { open = "", close = "" }
 perm_sep = { fg = "#7a7a7a" }
 perm_type = { fg = "#8fb0d9" }
 perm_read = { fg = "#d9c48c" }
@@ -44,6 +46,7 @@ progress_normal = { fg = "#8fb0d9", bg = "#222222" }
 progress_error = { fg = "#d98c8c", bg = "#222222" }
 
 [which]
+border = { fg = "#d4d4d4" }
 cols = 3
 mask = { bg = "#1e1e1e" }
 cand = { fg = "#8fb0d9" }
@@ -55,7 +58,7 @@ separator_style = { fg = "#7a7a7a" }
 [confirm]
 border = { fg = "#d4d4d4" }
 title = { fg = "#d4d4d4", bold = true }
-content = { fg = "#e6e6e6" }
+body = { fg = "#e6e6e6" }
 list = { fg = "#e6e6e6" }
 btn_yes = { fg = "#121212", bg = "#d4d4d4" }
 btn_no = { fg = "#7a7a7a" }
@@ -93,19 +96,19 @@ title = { fg = "#d4d4d4", bold = true }
 hovered = { fg = "#e6e6e6", bg = "#2a2a2a", bold = true }
 
 [help]
-on = { fg = "#8fb0d9" }
-run = { fg = "#d4d4d4" }
-desc = { fg = "#7a7a7a" }
+border = { fg = "#d4d4d4" }
+chord = { fg = "#8fb0d9" }
+action = { fg = "#e6e6e6" }
 hovered = { fg = "#e6e6e6", bg = "#2a2a2a", bold = true }
-footer = { fg = "#7a7a7a", bg = "#222222" }
 
 [filetype]
 rules = [
+	{ mime = "**/image/*", fg = "#8fb0d9" },
+	{ mime = "**/{audio,video}/*", fg = "#8fb0d9" },
+	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#d9c48c" },
+	{ mime = "**/application/{pdf,doc,rtf}", fg = "#a8a8a8" },
 	{ url = "*", is = "orphan", fg = "#d98c8c" },
 	{ url = "*", is = "exec", fg = "#8fbf8f" },
-	{ mime = "image/*", fg = "#8fb0d9" },
-	{ mime = "{audio,video}/*", fg = "#8fb0d9" },
-	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#d9c48c" },
 	{ url = "*/", fg = "#e6e6e6", bold = true },
 	{ url = "*", fg = "#e6e6e6" },
 ]

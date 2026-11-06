@@ -65,3 +65,14 @@ Gotchas:
 | `Tab` | File info |
 | `.` | Toggle hidden files |
 | `~` | Help |
+
+### Validating `theme.toml`
+
+A timed launch of yazi does not report config errors when its output is redirected, so it is not a validator. Check keys against the official JSON schema instead:
+
+```powershell
+curl.exe -fsSLo theme-schema.json https://yazi-rs.github.io/schemas/theme.json
+python -I scripts/check-yazi-theme.py theme-schema.json "$env:APPDATA\yazi\config\theme.toml"
+```
+
+It reports every section or key that the schema does not know. The final check is still opening yazi: a bad file prints "Failed to parse config".
