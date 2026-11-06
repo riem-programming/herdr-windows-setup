@@ -27,6 +27,8 @@ Launched with `ctrl+b alt+m` (temporary pane, closes on exit).
 
 Wide tables still wrap. Use VS Code preview for those.
 
+**Appearance:** lazygit inherits the terminal's 16 ANSI colors (Minimal Ink scheme), so it needs no theme. glow defines its own colors, so `style.json` carries the Minimalism palette.
+
 `glow.yml` needs an **absolute** `style` path; the copy in this repo uses `%LOCALAPPDATA%` as a placeholder. Replace it with your real path.
 
 ## yazi
