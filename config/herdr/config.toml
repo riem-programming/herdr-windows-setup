@@ -1,0 +1,53 @@
+# Herdr configuration
+# Reference: herdr --default-config | https://herdr.dev/docs/configuration/
+# Apply changes to a running server: herdr server reload-config
+
+# Skip the first-run setup wizard.
+onboarding = false
+
+[ui.toast]
+# Deliver agent notifications (done / needs input) through the Windows
+# notification service. Clicking a notification brings the Herdr window forward.
+delivery = "system"
+
+[ui.sound]
+# Play a chime when an agent finishes and an alert when it needs input.
+# Only applies to agents in background workspaces.
+enabled = true
+
+[session]
+# Resume supported agent conversations (e.g. claude --resume <id>) after a
+# server restart. Requires the official integration for each agent.
+resume_agents_on_restore = true
+
+[experimental]
+# Keep each pane's screen content across a full server restart.
+pane_history = true
+
+[terminal]
+# Windows Terminal does not support the Kitty graphics protocol.
+kitty_graphics = false
+
+# lazygit runs INSIDE the focused pane, exactly as if typed there.
+# `herdr pane run` types the command plus Enter into the pane, so no split is created.
+# Focus a shell pane first: the text goes to whatever runs in that pane.
+# Commands run through cmd.exe /d /c, hence the %VAR% syntax.
+[[keys.command]]
+key = "prefix+alt+g"
+type = "shell"
+command = '"%HERDR_BIN_PATH%" pane run %HERDR_ACTIVE_PANE_ID% lazygit'
+description = "lazygit in focused pane"
+
+# glow and yazi open in a temporary pane next to the focused one; the pane closes
+# when the tool exits (q). Use prefix+z to zoom it.
+[[keys.command]]
+key = "prefix+alt+m"
+type = "pane"
+command = "glow"
+description = "glow (markdown reader)"
+
+[[keys.command]]
+key = "prefix+alt+f"
+type = "pane"
+command = "yazi"
+description = "yazi (file browser)"

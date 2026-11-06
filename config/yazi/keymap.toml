@@ -1,0 +1,10 @@
+# Yazi keymap overrides (Windows)
+# Reference: https://yazi-rs.github.io/docs/configuration/keymap
+# prepend_keymap entries take priority over the defaults.
+
+[mgr]
+prepend_keymap = [
+	# Shift+Enter always opens the hovered file(s) in VS Code, regardless of type.
+	# Enter keeps the per-type behavior (glow for .md, VS Code for code) and O shows the menu.
+	{ on = "<S-Enter>", run = "shell 'code %s' --orphan", desc = "Open in VS Code" },
+]

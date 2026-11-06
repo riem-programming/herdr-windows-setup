@@ -1,0 +1,6 @@
+{
+    "name": "herdr",
+    "commandline": "%USERPROFILE%\.herdr\packages\standalone\current\herdr.exe",
+    "startingDirectory": "D:\Archivos\Developer",
+    "hidden": false
+}

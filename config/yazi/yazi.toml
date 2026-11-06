@@ -1,0 +1,32 @@
+# Yazi configuration (Windows)
+# Reference: https://yazi-rs.github.io/docs/configuration/yazi
+# Windows has no $EDITOR, so the text opener must be defined explicitly.
+
+[mgr]
+show_hidden = true
+
+[opener]
+# Open text files in VS Code. orphan = true keeps VS Code running after Yazi exits.
+edit = [
+	{ run = 'code %s', orphan = true, desc = "Open in VS Code", for = "windows" },
+]
+# Read markdown in glow. block = true hands the screen to glow until it exits (q).
+# Known limitation on Windows inside herdr: glow's first frame may not paint when
+# launched from Yazi; press a key (r) once to repaint.
+read = [
+	{ run = 'glow %s', block = true, desc = "Read in glow", for = "windows" },
+]
+
+[open]
+# Rules are matched top to bottom; the first match wins.
+# Markdown: Enter runs the first opener (glow); O lists both; Shift+Enter forces VS Code.
+# Everything else text-like goes straight to VS Code.
+prepend_rules = [
+	{ url = "*.md", use = [ "read", "edit" ] },
+	{ mime = "text/*", use = "edit" },
+	{ mime = "application/json", use = "edit" },
+	{ mime = "application/toml", use = "edit" },
+	{ mime = "application/x-yaml", use = "edit" },
+	{ mime = "inode/empty", use = "edit" },
+	{ url = "*.{ts,tsx,js,jsx,json,toml,yml,yaml,env,lua,ps1,sh,cs,py,go,rs}", use = "edit" },
+]

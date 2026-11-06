@@ -1,0 +1,17 @@
+# Glow configuration
+# Reference: https://github.com/charmbracelet/glow#the-config-file
+
+# Custom style: dark theme without the literal ##/### heading markers.
+# glow needs an ABSOLUTE path and does not expand variables: replace %LOCALAPPDATA%
+# with your real folder, e.g. "C:\\Users\\<you>\\AppData\\Local\\glow\\Config\\style.json".
+style: "%LOCALAPPDATA%\\glow\\Config\\style.json"
+# Wrap at 120 columns so wide tables get more room before cells start wrapping.
+width: 120
+# Always open the TUI (scrollable reader), even when a file is passed as argument.
+# Without this, `glow file.md` prints the render to stdout and exits immediately.
+tui: true
+pager: false
+mouse: true
+showLineNumbers: false
+preserveNewLines: false
+all: false
