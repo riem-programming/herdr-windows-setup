@@ -5,6 +5,40 @@
 # Skip the first-run setup wizard.
 onboarding = false
 
+# Minimalism: one ink, one paper, no accent hue. Hierarchy comes from contrast only;
+# status colors are desaturated. Follows the Windows Terminal light/dark appearance.
+[theme]
+name = "tokyo-night"
+auto_switch = true
+dark_name = "tokyo-night"
+light_name = "catppuccin-latte"
+
+[theme.custom.dark]
+panel_bg = "#121212"
+sidebar_bg = "#121212"
+active_row_bg = "#1e1e1e"
+selection_bg = "#2a2a2a"
+surface_dim = "#222222"
+text = "#e6e6e6"
+accent = "#d4d4d4"
+green = "#8fbf8f"
+blue = "#8fb0d9"
+red = "#d98c8c"
+yellow = "#d9c48c"
+
+[theme.custom.light]
+panel_bg = "#fafafa"
+sidebar_bg = "#fafafa"
+active_row_bg = "#efefef"
+selection_bg = "#e4e4e4"
+surface_dim = "#e6e6e6"
+text = "#1a1a1a"
+accent = "#1a1a1a"
+green = "#4f8f4f"
+blue = "#3f6fa8"
+red = "#b04a4a"
+yellow = "#a88a2a"
+
 [ui.toast]
 # Deliver agent notifications (done / needs input) through the Windows
 # notification service. Clicking a notification brings the Herdr window forward.
