@@ -35,6 +35,8 @@ Wide tables still wrap. Use VS Code preview for those.
 
 Launched with `ctrl+b alt+f` (temporary pane, `ctrl+b z` to zoom).
 
+**Appearance:** yazi defines its own colors, so `theme.toml` carries the Minimalism palette (lazygit needs no theme: it inherits the terminal's 16 ANSI colors).
+
 Windows has no `$EDITOR`, so the openers are explicit:
 
 | Opener | Command | Notes |
