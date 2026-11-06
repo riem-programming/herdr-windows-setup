@@ -14,3 +14,18 @@
 - `Shift+Enter` is reported correctly by Windows Terminal on this machine. herdr and yazi docs warn it may not be on some terminals.
 - Windows Terminal lacks Kitty graphics, hence `terminal.kitty_graphics = false`.
 - The drawn cursor on Windows is steady (non-blinking) by design. Set `ui.host_cursor = "native"` to revert.
+
+## New panes open Windows PowerShell 5.1 instead of PowerShell 7
+
+Symptom: errors in the old `En línea: 1 Carácter: 1 / CategoryInfo` format, and the PowerShell 7 profile (zoxide, etc.) is not loaded.
+
+Cause: PowerShell 7 installed from the Microsoft Store (MSIX) is only reachable through the `WindowsApps` app-execution alias, and herdr's shell auto-detection falls back to `powershell.exe`.
+
+Fix: set the shell explicitly in `config.toml` and open a new pane (existing panes keep their shell):
+
+```toml
+[terminal]
+default_shell = "pwsh.exe"
+```
+
+Check with `$PSVersionTable.PSVersion` inside the pane.

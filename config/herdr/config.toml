@@ -61,6 +61,9 @@ pane_history = true
 [terminal]
 # Windows Terminal does not support the Kitty graphics protocol.
 kitty_graphics = false
+# Use PowerShell 7 for new panes. The Store (MSIX) pwsh is only reachable through the
+# WindowsApps alias and herdr's auto-detection fell back to Windows PowerShell 5.1.
+default_shell = "pwsh.exe"
 
 # Focus layout: sidebar starts as a compact status rail (toggle with prefix+b),
 # no outer frame, no scrollbars, tab row hidden while a workspace has one tab.
