@@ -1,0 +1,14 @@
+# lazygit configuration
+# Reference: https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+#            https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_DiffRenderers.md
+# Press | inside lazygit to cycle between the renderers below.
+
+git:
+  diffRenderers:
+    # delta: syntax-highlighted diffs with line numbers. "ansi" uses the terminal's
+    # 16 colors, so it follows the Minimal Ink scheme like lazygit itself.
+    - name: delta
+      command: delta --{{colorScheme}} --paging=never --line-numbers --syntax-theme ansi
+    # git's own diff, kept as a fallback.
+    - type: rawGit
+      name: default
