@@ -1,0 +1,23 @@
+{
+  "name": "Minimal Ink",
+  "background": "#121212",
+  "foreground": "#E6E6E6",
+  "cursorColor": "#E6E6E6",
+  "selectionBackground": "#2A2A2A",
+  "black": "#121212",
+  "red": "#D98C8C",
+  "green": "#8FBF8F",
+  "yellow": "#D9C48C",
+  "blue": "#8FB0D9",
+  "purple": "#B8A0C8",
+  "cyan": "#8FBFB8",
+  "white": "#E6E6E6",
+  "brightBlack": "#7A7A7A",
+  "brightRed": "#E8A0A0",
+  "brightGreen": "#A3D3A3",
+  "brightYellow": "#E8D6A0",
+  "brightBlue": "#A3C4E8",
+  "brightPurple": "#CBB4DB",
+  "brightCyan": "#A3D3CC",
+  "brightWhite": "#FFFFFF"
+}

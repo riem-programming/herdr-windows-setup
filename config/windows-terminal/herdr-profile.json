@@ -1,6 +1,12 @@
 {
-    "name": "herdr",
-    "commandline": "%USERPROFILE%\.herdr\packages\standalone\current\herdr.exe",
-    "startingDirectory": "D:\Archivos\Developer",
-    "hidden": false
+  "name": "herdr",
+  "commandline": "%USERPROFILE%\.herdr\packages\standalone\current\herdr.exe",
+  "startingDirectory": "D:\Archivos\Developer",
+  "hidden": false,
+  "font": { "face": "JetBrainsMono NF", "size": 11, "weight": "normal" },
+  "padding": "12",
+  "cursorShape": "bar",
+  "colorScheme": "Minimal Ink",
+  "scrollbarState": "hidden",
+  "bellStyle": "none"
 }

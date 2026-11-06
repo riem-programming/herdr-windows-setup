@@ -62,6 +62,15 @@ pane_history = true
 # Windows Terminal does not support the Kitty graphics protocol.
 kitty_graphics = false
 
+# Focus layout: sidebar starts as a compact status rail (toggle with prefix+b),
+# no outer frame, no scrollbars, tab row hidden while a workspace has one tab.
+[ui]
+sidebar_start_collapsed = true
+sidebar_collapsed_mode = "compact"
+pane_outer_borders = false
+pane_scrollbars = false
+hide_tab_bar_when_single_tab = true
+
 # lazygit runs INSIDE the focused pane, exactly as if typed there.
 # `herdr pane run` types the command plus Enter into the pane, so no split is created.
 # Focus a shell pane first: the text goes to whatever runs in that pane.
